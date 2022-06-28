@@ -1,3 +1,3 @@
 ## So today
 
-A personal block built on Next.js.
+A personal blog built on Next.js.
