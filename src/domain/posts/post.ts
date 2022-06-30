@@ -59,6 +59,7 @@ export type PostCover = PostCoverFormat & {
   };
 };
 
+
 export type PostData = {
   id: PostID;
   title: string;
@@ -72,3 +73,13 @@ export type PostData = {
   updated_at: string;
   cover: PostCover;
 };
+
+export type FullPost = {
+  data: [
+    {
+      id: PostID;
+      attributes: PostData;
+    }
+  ];
+  meta: object;
+}
