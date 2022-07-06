@@ -42,6 +42,10 @@ export type PostCoverFormat = {
 };
 
 export type PostCover = PostCoverFormat & {
+  data:{
+    attributes: {
+
+
   id: PostID;
   alternativeText: string;
   caption: string;
@@ -57,6 +61,8 @@ export type PostCover = PostCoverFormat & {
     medium: PostCoverFormat;
     large: PostCoverFormat;
   };
+}
+}
 };
 
 
@@ -71,11 +77,11 @@ export type PostData = {
   updated_by: PostCreatedBy;
   created_at: string;
   updated_at: string;
-  cover: PostCover;
+  cover:  PostCover;
 };
 
 export type FullPost = {
-  data: [
+  data: Array<PostID | PostData>  & [
     {
       id: PostID;
       attributes: PostData;

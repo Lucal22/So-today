@@ -36,7 +36,8 @@ export default function MenuButton() {
             </ul>
             <div>
               <button
-                className='mb-6'
+                className='mb-6 hover:text-blue-500 dark:hover:text-blue-500'
+
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
                 {theme === 'light' ?
                   <SunDim size={25} />
@@ -45,11 +46,13 @@ export default function MenuButton() {
               </button>
               <div>
                 <a
+                  className='hover:text-blue-500 dark:hover:text-blue-500'
                   href='https://github.com/Lucal22/so-today'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <GithubLogo size={25} />
+                  <GithubLogo
+                    size={25} />
                 </a>
               </div>
             </div>

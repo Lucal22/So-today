@@ -36,7 +36,7 @@ export default function Header() {
               {navBar.map((item, key) => {
                 return (
                   <a key={key}>
-                    <li className='cursor-pointer text-black hover:text-blue-500  dark:text-white dark:hover:text-blue-500 '>{item.name}</li>
+                    <li className='cursor-pointer text-black hover:text-blue-500 dark:hover:text-blue-500 dark:text-white  '>{item.name}</li>
                   </a>
                 )
               })}
@@ -46,6 +46,7 @@ export default function Header() {
             {/* theme button and github link */}
             <div className='flex flex-row gap-2'>
               <button
+                className='hover:text-blue-500 dark:hover:text-blue-500'
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
                 {theme === 'light' ?
                   <SunDim size={25} />
@@ -54,6 +55,7 @@ export default function Header() {
               </button>
               <div>
                 <a
+                  className='hover:text-blue-500 dark:hover:text-blue-500'
                   href='https://github.com/Lucal22/so-today'
                   target='_blank'
                   rel='noopener noreferrer'

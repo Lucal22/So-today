@@ -10,7 +10,10 @@ module.exports = {
         darknav: '#161b22',
         darkbg: '#0d1117',
         darktxt: '#c9d1d9',
-      }
+      },
+      gridTemplateColumns: {
+        posts: '2fr, 1fr',
+      },
     },
 
   },
