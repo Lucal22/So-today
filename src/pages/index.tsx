@@ -2,16 +2,21 @@ import React from 'react'
 import Homepage from '../container/Homepage/Homepage'
 import { GetStaticProps } from 'next'
 import { getAllPosts } from '../data/posts/get-all-posts'
-import { FullPost } from '../domain/posts/post'
+import { FullPost, PostData } from '../domain/posts/post'
+import { getPost } from '../data/posts/get-post'
 
 export type HomeProps = {
   posts: FullPost;
+  content: PostData;
 }
 
-export default function Home({ posts }: HomeProps) {
+export default function Home({ posts, content }: HomeProps) {
   return (
     <section className='h-full bg-white '>
-      <Homepage posts={posts} />
+      <Homepage
+      posts={posts}
+      content = {content}
+      />
     </section>
 
   )
@@ -19,7 +24,8 @@ export default function Home({ posts }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPosts()
+  const content = await getPost()
   return {
-    props: { posts },
+    props: { posts, content },
   }
 }

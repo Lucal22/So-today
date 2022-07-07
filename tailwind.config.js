@@ -12,7 +12,8 @@ module.exports = {
         darktxt: '#c9d1d9',
       },
       gridTemplateColumns: {
-        posts: '2fr, 1fr',
+        sections: '2fr, 1fr',
+        posts: '245px, 1fr',
       },
     },
 
