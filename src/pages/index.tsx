@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next'
 import { getAllPosts } from '../data/posts/get-all-posts'
 import { FullPost, PostData } from '../domain/posts/post'
 import { getPost } from '../data/posts/get-post'
+import { markdownToHtml } from '../utils/markdown-to-html'
 
 export type HomeProps = {
   posts: FullPost;
@@ -11,6 +12,7 @@ export type HomeProps = {
 }
 
 export default function Home({ posts, content }: HomeProps) {
+
   return (
       <Homepage
       posts={posts}

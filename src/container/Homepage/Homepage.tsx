@@ -12,7 +12,6 @@ export type HomeProps = {
 export default function Homepage({ posts, content }: HomeProps) {
   const lastPostData = posts.data[0].attributes;
   const allPosts = posts.data;
-
   return (
     <>
       <Header />

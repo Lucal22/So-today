@@ -86,13 +86,3 @@ export type FullPost = {
   ];
   meta: object;
 }
-
-// export type FullPost = {
-//   data: Array<PostID | PostData>  & [
-//     {
-//       id: PostID;
-//       attributes: PostData;
-//     }
-//   ];
-//   meta: object;
-// }

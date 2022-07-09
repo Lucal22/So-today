@@ -24,6 +24,7 @@ export default function PostComponent({ thumbmail, title, author, date, abstract
         <Details
         author={author}
         date={date}
+        category={category}
         />
            <p
            className='text-slate-500 text-justify mt-1'
