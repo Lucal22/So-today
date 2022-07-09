@@ -12,13 +12,10 @@ export type HomeProps = {
 
 export default function Home({ posts, content }: HomeProps) {
   return (
-    <section className='h-full bg-white '>
       <Homepage
       posts={posts}
       content = {content}
       />
-    </section>
-
   )
 }
 

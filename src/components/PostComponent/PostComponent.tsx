@@ -1,4 +1,5 @@
 import React from 'react'
+import Details from '../Details/Details';
 
 export type PostComponentProps= {
   thumbmail: string;
@@ -20,9 +21,10 @@ export default function PostComponent({ thumbmail, title, author, date, abstract
       <a href={`/posts/${category}/${slug}`}>
         <h2 className=' mb-1 text-[18px] leading-none hover:text-blue-500 dark:hover:text-blue-500'>{title}</h2>
         </a>
-        <span className='text-slate-400 text-sm'>
-          Publicado por <a className='text-blue-500' href={`/about/authors/${author}`}>{author}</a> , em {date}
-          </span>
+        <Details
+        author={author}
+        date={date}
+        />
            <p
            className='text-slate-500 text-justify mt-1'
            dangerouslySetInnerHTML={{__html: abstract.substring(0, 230)+"...   "}} />
