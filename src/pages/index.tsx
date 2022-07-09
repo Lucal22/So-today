@@ -23,7 +23,7 @@ export default function Home({ posts, content }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts()
+  const posts = await getAllPosts('sort=id:desc')
   const content = await getPost()
   return {
     props: { posts, content },

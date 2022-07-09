@@ -10,6 +10,8 @@ export type HomeProps = {
 }
 
 export default function Homepage({ posts, content }: HomeProps) {
+  const lastPostData = posts.data[0].attributes;
+  const allPosts = posts.data;
 
   return (
     <>
@@ -22,44 +24,38 @@ export default function Homepage({ posts, content }: HomeProps) {
           <section className='block sm:grid sm:grid-cols-sections gap-10'>
             <section>
               <div className='mb-20'>
-            <LatestPost
-            lastPostUrl = {posts.data[posts.data.length -1].attributes.cover.data.attributes.formats.medium.url}
-            lastPostTitle = {posts.data[posts.data.length -1].attributes.title}
-            />
-            </div>
-            <div className='block'>
-              <PostComponent
-              thumbmail = {posts.data[posts.data.length -1].attributes.cover.data.attributes.formats.thumbnail.url}
-              title = {posts.data[posts.data.length -1].attributes.title}
-              author = {posts.data[posts.data.length -1].attributes.author.data.attributes.name}
-              date = {posts.data[posts.data.length -1].attributes.updatedAt}
-              abstract ={content.content}
-              />
-              <PostComponent
-              thumbmail = {posts.data[0].attributes.cover.data.attributes.formats.thumbnail.url}
-              title = {posts.data[0].attributes.title}
-              author = {posts.data[0].attributes.author.data.attributes.name}
-              date = {posts.data[0].attributes.updatedAt}
-              abstract ={posts.data[0].attributes.content}
-              />
+                 <LatestPost
+                  lastPostUrl={lastPostData.cover.data.attributes.formats.medium.url}
+                  lastPostTitle={lastPostData.title}
+                  lastSlug={lastPostData.slug}
+                  lastCategory={lastPostData.category.data.attributes.name}
+
+                />
+              </div>
+              <div className='block'>
+                 {allPosts.map((post) =>{
+                  return(
+                    <PostComponent
+                      key={post.id}
+                      thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
+                      title={post.attributes.title}
+                      author={post.attributes.author.data.attributes.name}
+                      date={post.attributes.updatedAt}
+                      abstract={content.content}
+                      slug={post.attributes.slug}
+                      category={post.attributes.category.data.attributes.name} />
+                )
+                 })
+                }
               </div>
             </section>
-          <section className='hidden sm:block'>
-            <div className='w-full h-10 bg-white'>
-            </div>
-          </section>
+            <section className='hidden sm:block'>
+              <div className='w-full h-10 bg-white'>
+              </div>
+            </section>
           </section>
         </div>
       </main>
     </>
   )
 }
-
-
-
-
-{/* {<div>
-            {posts.data.map((post) => (
-              <h2 key={post.id}>{post.attributes.title}</h2>
-            ))}
-          </div>} */}

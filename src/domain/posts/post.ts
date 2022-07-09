@@ -65,21 +65,20 @@ export type PostCover = PostCoverFormat & {
 }
 };
 
-
 export type PostData = {
   id: PostID;
   title: string;
   content: string;
   slug: string;
-  author: PostAuthor;
-  category: PostCategory;
   createdAt: string;
   updatedAt: string;
+  publishedAt: string;
+  author: PostAuthor;
+  category: PostCategory;
   cover:  PostCover;
 };
-
 export type FullPost = {
-  data: Array<PostID | PostData>  & [
+  data: [
     {
       id: PostID;
       attributes: PostData;
@@ -87,3 +86,13 @@ export type FullPost = {
   ];
   meta: object;
 }
+
+// export type FullPost = {
+//   data: Array<PostID | PostData>  & [
+//     {
+//       id: PostID;
+//       attributes: PostData;
+//     }
+//   ];
+//   meta: object;
+// }
