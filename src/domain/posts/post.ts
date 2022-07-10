@@ -70,6 +70,7 @@ export type PostData = {
   title: string;
   content: string;
   slug: string;
+  description: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

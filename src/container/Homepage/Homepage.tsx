@@ -3,6 +3,7 @@ import { FullPost, PostData } from '../../domain/posts/post'
 import Header from '../../components/Header/Header'
 import PostComponent from '../../components/PostComponent/PostComponent'
 import LatestPost from './components/LatestPost'
+import Banners from '../../components/Banners/Banners'
 
 export type HomeProps = {
   posts: FullPost;
@@ -24,7 +25,7 @@ export default function Homepage({ posts, content }: HomeProps) {
             <section>
               <div className='mb-20'>
                  <LatestPost
-                  lastPostUrl={lastPostData.cover.data.attributes.formats.medium.url}
+                  lastPostUrl={lastPostData.cover.data.attributes.formats.large.url}
                   lastPostTitle={lastPostData.title}
                   lastSlug={lastPostData.slug}
                   lastCategory={lastPostData.category.data.attributes.name}
@@ -39,12 +40,8 @@ export default function Homepage({ posts, content }: HomeProps) {
                       thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}
                       author={post.attributes.author.data.attributes.name}
-                      date={post.attributes.publishedAt
-                        .slice(0,10)
-                        .split(',')
-                        .join()
-                      }
-                      abstract={content.content}
+                      date={post.attributes.publishedAt}
+                      description={post.attributes.description}
                       slug={post.attributes.slug}
                       category={post.attributes.category.data.attributes.name} />
                 )
@@ -53,7 +50,16 @@ export default function Homepage({ posts, content }: HomeProps) {
               </div>
             </section>
             <section className='hidden sm:block'>
-              <div className='w-full h-10 bg-white'>
+              <div className='w-full h-full'>
+                <Banners
+                category={allPosts[0].attributes.category.data.attributes.name}
+                thumbmail={allPosts[0].attributes.cover.data.attributes.formats.thumbnail.url}
+                />
+
+                <Banners
+                category={allPosts[0].attributes.category.data.attributes.name}
+                thumbmail={allPosts[0].attributes.cover.data.attributes.formats.thumbnail.url}
+                />
               </div>
             </section>
           </section>

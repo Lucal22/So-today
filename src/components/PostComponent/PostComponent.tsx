@@ -6,12 +6,12 @@ export type PostComponentProps= {
   title: string;
   author: string;
   date: string;
-  abstract: string;
+  description: string;
   slug: string;
   category: string;
 }
 
-export default function PostComponent({ thumbmail, title, author, date, abstract, slug, category }:PostComponentProps) {
+export default function PostComponent({ thumbmail, title, author, date, description, slug, category }:PostComponentProps) {
   return (
     <article className='grid grid-cols-posts gap-8 py-5 border-t-[1px] border-slate-300 dark:border-black w-full h-full'>
       <div>
@@ -28,7 +28,7 @@ export default function PostComponent({ thumbmail, title, author, date, abstract
         />
            <p
            className='text-slate-500 text-justify mt-1'
-           dangerouslySetInnerHTML={{__html: abstract.substring(0, 230)+"...   "}} />
+           dangerouslySetInnerHTML={{__html: description.substring(0, 230)+"...   "}} />
       </div>
     </article>
   )
