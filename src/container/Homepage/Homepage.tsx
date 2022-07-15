@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import PostComponent from '../../components/PostComponent/PostComponent';
 import LatestPost from './components/LatestPost';
 import Banners from '../../components/Banners/Banners';
+import MorePosts from '../../components/MorePosts/MorePosts';
 
 export type HomeProps = {
   posts: FullPost;
@@ -52,6 +53,7 @@ export default function Homepage({ posts }: HomeProps) {
                   );
                 })}
               </div>
+              <MorePosts />
             </section>
             <section className="hidden sm:block">
               <div className="h-full w-full">
