@@ -8,7 +8,6 @@ import { getPost } from '../data/posts/get-post';
 export type HomeProps = {
   posts: FullPost;
   content: PostData;
-  morePosts: string;
 };
 
 export default function Home({ posts, content }: HomeProps) {
@@ -16,7 +15,7 @@ export default function Home({ posts, content }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts(`pagination[start]=0&pagination[limit]=${4}`);
+  const posts = await getAllPosts(`pagination[start]=0&pagination[limit]=20`);
   const content = await getPost();
   return {
     props: { posts, content },

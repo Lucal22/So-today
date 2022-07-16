@@ -1,8 +1,10 @@
 module.exports = {
   darkMode: 'class',
-  content: ["./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/container/**/*.{js,ts,jsx,tsx}",],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/container/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -16,7 +18,6 @@ module.exports = {
         posts: '245px, 1fr',
       },
     },
-
   },
   plugins: [],
-}
+};

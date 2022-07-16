@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FullPost, PostData } from '../../domain/posts/post';
 import Header from '../../components/Header/Header';
 import PostComponent from '../../components/PostComponent/PostComponent';
 import LatestPost from './components/LatestPost';
 import Banners from '../../components/Banners/Banners';
 import MorePosts from '../../components/MorePosts/MorePosts';
+import Footer from '../../components/Footer/Footer';
 
 export type HomeProps = {
   posts: FullPost;
@@ -12,8 +13,11 @@ export type HomeProps = {
 };
 
 export default function Homepage({ posts }: HomeProps) {
+  const [number, setNumber] = useState<number>(5);
+
   const lastPostData = posts.data[0].attributes;
   const allPosts = posts.data;
+  const renderPosts = posts.data.slice(0, number);
   return (
     <>
       <Header />
@@ -26,23 +30,18 @@ export default function Homepage({ posts }: HomeProps) {
             <section>
               <div className="mb-20">
                 <LatestPost
-                  lastPostUrl={
-                    lastPostData.cover.data.attributes.formats.large.url
-                  }
+                  lastPostUrl={lastPostData.cover.data.attributes.formats.large.url}
                   lastPostTitle={lastPostData.title}
                   lastSlug={lastPostData.slug}
                   lastCategory={lastPostData.category.data.attributes.name}
                 />
               </div>
-              <div className="block">
-                {allPosts.map((post) => {
+              <div className="mb-10 block">
+                {renderPosts.map((post) => {
                   return (
                     <PostComponent
                       key={post.id}
-                      thumbmail={
-                        post.attributes.cover.data.attributes.formats.thumbnail
-                          .url
-                      }
+                      thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}
                       author={post.attributes.author.data.attributes.name}
                       date={post.attributes.publishedAt}
@@ -53,33 +52,23 @@ export default function Homepage({ posts }: HomeProps) {
                   );
                 })}
               </div>
-              <MorePosts />
             </section>
             <section className="hidden sm:block">
               <div className="h-full w-full">
                 <Banners
-                  category={
-                    allPosts[0].attributes.category.data.attributes.name
-                  }
-                  thumbmail={
-                    allPosts[0].attributes.cover.data.attributes.formats
-                      .thumbnail.url
-                  }
+                  category={allPosts[0].attributes.category.data.attributes.name}
+                  thumbmail={allPosts[0].attributes.cover.data.attributes.formats.thumbnail.url}
                 />
-
                 <Banners
-                  category={
-                    allPosts[0].attributes.category.data.attributes.name
-                  }
-                  thumbmail={
-                    allPosts[0].attributes.cover.data.attributes.formats
-                      .thumbnail.url
-                  }
+                  category={allPosts[0].attributes.category.data.attributes.name}
+                  thumbmail={allPosts[0].attributes.cover.data.attributes.formats.thumbnail.url}
                 />
               </div>
             </section>
           </section>
+          <MorePosts morePosts={number} setMorePosts={setNumber} />
         </div>
+        <Footer />
       </main>
     </>
   );
