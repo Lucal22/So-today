@@ -16,12 +16,7 @@ export default function Footer() {
         <div>
           <ul>
             {socialMedias.map((item) => (
-              <a
-                key={item.id}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">
                 <li className="mb-4 text-center hover:text-blue-500 dark:hover:text-blue-500 ">
                   {item.name}
                 </li>
@@ -32,12 +27,7 @@ export default function Footer() {
         <div>
           <ul>
             {navBar.map((item) => (
-              <a
-                key={item.id}
-                href={item.route}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a key={item.id} href={item.route} target="_blank" rel="noopener noreferrer">
                 <li className="mb-4 text-center hover:text-blue-500 dark:hover:text-blue-500">
                   {item.name}
                 </li>
@@ -50,11 +40,7 @@ export default function Footer() {
         <p>Copyright © {year}</p>
         <p>
           Feito por{' '}
-          <a
-            href="https://lucal-portfolio.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://lucal-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">
             <span className=" text-slate-500">Lucal</span>
           </a>{' '}
           :)

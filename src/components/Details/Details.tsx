@@ -11,10 +11,7 @@ export default function Details({ date, author, category }: DetailsProps) {
   return (
     <span className=" text-[12px] text-slate-400 tablets:text-sm">
       <span className="hidden tablets:inline"> Publicado por</span>
-      <a
-        className="hidden text-blue-500 tablets:inline"
-        href={`/about/authors/${author}`}
-      >
+      <a className="hidden text-blue-500 tablets:inline" href={`/about/authors/${author}`}>
         {' '}
         {author}{' '}
       </a>

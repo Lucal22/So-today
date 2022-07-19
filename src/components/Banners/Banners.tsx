@@ -16,21 +16,13 @@ export default function Banners({ categories }: BannerProps) {
           >
             <div className="mb-4">
               <a href={`/posts/${item.attributes.Slug}`}>
-                <img
-                  src={
-                    item.attributes.Image.data.attributes.formats.thumbnail.url
-                  }
-                />
+                <img src={item.attributes.Image.data.attributes.formats.thumbnail.url} />
               </a>
             </div>
             <div>
               <a href={`/posts/${item.attributes.Slug}`}>
-                <h2 className="mb-4 text-center text-2xl">
-                  {item.attributes.name}
-                </h2>
-                <p className="text-center">
-                  Veja todos os posts dessa categoria
-                </p>
+                <h2 className="mb-4 text-center text-2xl">{item.attributes.name}</h2>
+                <p className="text-center">Veja todos os posts dessa categoria</p>
               </a>
             </div>
           </div>
