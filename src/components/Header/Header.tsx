@@ -31,10 +31,7 @@ export default function Header() {
             {/* Logo */}
             <h1 className="text-2xl font-bold text-slate-500  dark:text-slate-500">
               <a className="cursor-pointer " href="/">
-                LUCAL{' '}
-                <span className="hidden text-[14px] mobile:inline-block">
-                  THOUGHTS
-                </span>
+                LUCAL <span className="hidden text-[14px] mobile:inline-block">THOUGHTS</span>
               </a>
             </h1>
             {/* Navbar */}
