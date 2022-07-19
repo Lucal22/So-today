@@ -1,26 +1,41 @@
 import React from 'react';
+import { FullCategory } from '../../domain/categories/categories';
 
 export type BannerProps = {
-  category: string;
-  thumbmail: string;
+  categories: FullCategory;
 };
 
-export default function Banners({ category, thumbmail }: BannerProps) {
-  function capitalizeFirstLetter(capitalize: string) {
-    return capitalize.charAt(0).toUpperCase() + capitalize.slice(1);
-  }
+export default function Banners({ categories }: BannerProps) {
   return (
-    <div className="mb-10 h-80 w-full rounded-[10px] border-[1px] border-slate-300 bg-slate-100 p-4 dark:border-darkbg dark:bg-darknav">
-      <div>
-        <a href={`/posts/${category}`}>
-          <img src={thumbmail} />
-        </a>
-      </div>
-      <div>
-        <a href={`/posts/${category}`}>
-          <h2 className="text-center text-2xl">{capitalizeFirstLetter(category)}</h2>
-        </a>
-      </div>
+    <div>
+      {categories.data.map((item) => {
+        return (
+          <div
+            key={item.id}
+            className="mb-10 h-80 w-full rounded-[10px] border-[1px] border-slate-300 bg-slate-100 p-4 dark:border-darkbg dark:bg-darknav"
+          >
+            <div className="mb-4">
+              <a href={`/posts/${item.attributes.Slug}`}>
+                <img
+                  src={
+                    item.attributes.Image.data.attributes.formats.thumbnail.url
+                  }
+                />
+              </a>
+            </div>
+            <div>
+              <a href={`/posts/${item.attributes.Slug}`}>
+                <h2 className="mb-4 text-center text-2xl">
+                  {item.attributes.name}
+                </h2>
+                <p className="text-center">
+                  Veja todos os posts dessa categoria
+                </p>
+              </a>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

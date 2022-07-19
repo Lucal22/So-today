@@ -29,9 +29,12 @@ export default function Header() {
         <div className="my-0 mx-auto flex w-[1300px] items-center justify-between px-6 py-3">
           <div className="flex flex-row items-center gap-8">
             {/* Logo */}
-            <h1 className="text-2xl font-bold dark:text-white">
+            <h1 className="text-2xl font-bold text-slate-500  dark:text-slate-500">
               <a className="cursor-pointer " href="/">
-                So Today
+                LUCAL{' '}
+                <span className="hidden text-[14px] mobile:inline-block">
+                  THOUGHTS
+                </span>
               </a>
             </h1>
             {/* Navbar */}

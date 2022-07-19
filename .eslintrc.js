@@ -6,14 +6,11 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'eslint:recommended',
-    'next',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'plugin:tailwindcss/recommended',
-    'plugin:@next/next/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

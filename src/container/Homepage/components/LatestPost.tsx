@@ -7,9 +7,14 @@ export type LatestPostProps = {
   lastCategory: string;
 };
 
-export default function LatestPost({ lastPostUrl, lastPostTitle, lastSlug, lastCategory }: LatestPostProps) {
+export default function LatestPost({
+  lastPostUrl,
+  lastPostTitle,
+  lastSlug,
+  lastCategory,
+}: LatestPostProps) {
   return (
-    <section className="w-full">
+    <section className="hidden mobile:block">
       <div>
         <a href={`/posts/${lastCategory}/${lastSlug}`}>
           <img
@@ -17,9 +22,14 @@ export default function LatestPost({ lastPostUrl, lastPostTitle, lastSlug, lastC
             src={lastPostUrl}
           />
         </a>
-        <div className="flex h-full max-w-full  justify-center rounded-b-[10px] border-x-[1px] border-b-[1px]  border-slate-300 bg-slate-100 p-2 align-middle dark:border-black  dark:bg-darknav">
-          <a href={`/posts/${lastCategory}/${lastSlug}`} className="text-lg text-black dark:text-slate-200 md:text-2xl">
-            <h1 className="hover:text-blue-500 dark:hover:text-blue-500">{lastPostTitle}</h1>
+        <div className="flex h-full max-w-[240px] justify-center  rounded-b-[10px] border-x-[1px] border-b-[1px] border-slate-300  bg-slate-100 p-2 align-middle dark:border-black dark:bg-darknav  mobile:max-w-full">
+          <a
+            href={`/posts/${lastCategory}/${lastSlug}`}
+            className="text-lg text-black dark:text-slate-200 md:text-2xl"
+          >
+            <h1 className="hover:text-blue-500 dark:hover:text-blue-500">
+              {lastPostTitle}
+            </h1>
           </a>
         </div>
       </div>

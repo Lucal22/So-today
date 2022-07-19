@@ -14,7 +14,9 @@ export default function MorePosts({ morePosts, setMorePosts }: MorePostsProps) {
           setMorePosts(morePosts < 20 ? morePosts + 5 : morePosts);
         }}
       >
-        <p className="w-60 cursor-pointer text-center text-slate-500">Clique para ver mais posts</p>
+        <p className="w-44 cursor-pointer text-center text-[14px] text-slate-500 tablets:w-60 tablets:text-[18px]">
+          Clique para ver mais posts
+        </p>
       </div>
       <div className="h-[1px] w-full border-[1px] border-slate-500"></div>
     </div>

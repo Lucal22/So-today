@@ -9,14 +9,19 @@ export type DetailsProps = {
 
 export default function Details({ date, author, category }: DetailsProps) {
   return (
-    <span className="text-sm text-slate-400">
-      Publicado por
-      <a className="text-blue-500" href={`/about/authors/${author}`}>
+    <span className=" text-[12px] text-slate-400 tablets:text-sm">
+      <span className="hidden tablets:inline"> Publicado por</span>
+      <a
+        className="hidden text-blue-500 tablets:inline"
+        href={`/about/authors/${author}`}
+      >
         {' '}
         {author}{' '}
       </a>
-      em <Date date={date} /> |{' '}
-      <a className="text-blue-500" href={`/posts/${category}`}>
+      <span className="hidden tablets:inline">
+        em <Date date={date} /> |{' '}
+      </span>
+      <a className=" text-blue-500" href={`/posts/${category}`}>
         {category}
       </a>
     </span>

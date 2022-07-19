@@ -16,6 +16,11 @@ module.exports = {
       gridTemplateColumns: {
         sections: '3fr, 1fr',
         posts: '245px, 1fr',
+        mobile: '160px, 1fr',
+      },
+      screens: {
+        tablets: '485px',
+        mobile: '325px',
       },
     },
   },
