@@ -24,7 +24,7 @@ export default function Homepage({ posts, categories }: HomeProps) {
     <>
       <Header />
       <main className="block h-full w-full bg-white dark:bg-darkbg ">
-        <div className="my-0 mx-auto max-w-[1200px] p-4 tablets:px-10 tablets:pt-10">
+        <div className="my-0 mx-auto max-w-[1200px] p-2 tablets:px-10 tablets:pt-10">
           <Ad />
           <section className="block gap-10 md:grid md:grid-cols-sections">
             <section>
