@@ -24,15 +24,13 @@ export default function Homepage({ posts, categories }: HomeProps) {
     <>
       <Header />
       <main className="block h-full w-full bg-white dark:bg-darkbg ">
-        <div className="my-0 mx-auto max-w-[1200px] mobile:px-10 mobile:pt-10">
+        <div className="my-0 mx-auto max-w-[1200px] p-4 tablets:px-10 tablets:pt-10">
           <Ad />
           <section className="block gap-10 md:grid md:grid-cols-sections">
             <section>
               <div className="mb-20">
                 <LatestPost
-                  lastPostUrl={
-                    lastPostData.cover.data.attributes.formats.large.url
-                  }
+                  lastPostUrl={lastPostData.cover.data.attributes.formats.large.url}
                   lastPostTitle={lastPostData.title}
                   lastSlug={lastPostData.slug}
                   lastCategory={lastPostData.category.data.attributes.name}
@@ -43,10 +41,7 @@ export default function Homepage({ posts, categories }: HomeProps) {
                   return (
                     <PostComponent
                       key={post.id}
-                      thumbmail={
-                        post.attributes.cover.data.attributes.formats.thumbnail
-                          .url
-                      }
+                      thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}
                       author={post.attributes.author.data.attributes.name}
                       date={post.attributes.publishedAt}

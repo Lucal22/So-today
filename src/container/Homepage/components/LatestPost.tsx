@@ -14,7 +14,7 @@ export default function LatestPost({
   lastCategory,
 }: LatestPostProps) {
   return (
-    <section className="hidden mobile:block">
+    <section className="hidden tablets:block">
       <div>
         <a href={`/posts/${lastCategory}/${lastSlug}`}>
           <img
@@ -27,9 +27,7 @@ export default function LatestPost({
             href={`/posts/${lastCategory}/${lastSlug}`}
             className="text-lg text-black dark:text-slate-200 md:text-2xl"
           >
-            <h1 className="hover:text-blue-500 dark:hover:text-blue-500">
-              {lastPostTitle}
-            </h1>
+            <h1 className="hover:text-blue-500 dark:hover:text-blue-500">{lastPostTitle}</h1>
           </a>
         </div>
       </div>
