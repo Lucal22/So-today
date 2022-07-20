@@ -6,6 +6,6 @@ export const POSTS_URL =
 export const CATEGORIES_URL =
   'https://lucal-personal-blog.herokuapp.com/api/categories?populate=Image';
 
-export const SITE_NAME = 'So Today';
+export const SITE_NAME = 'Lucal Thoughts';
 
 export const SITE_URL = '';

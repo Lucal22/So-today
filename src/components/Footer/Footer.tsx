@@ -11,7 +11,7 @@ export default function Footer() {
   const today = new Date();
   const year = today.getFullYear();
   return (
-    <div className="mt-6 h-full border-t-[1px] border-slate-300 px-2 pb-4 dark:border-darkbg dark:bg-darknav">
+    <div className="mt-6 h-full border-t-[1px] border-slate-300 px-2 pb-4 text-slate-500 dark:border-darkbg dark:bg-darknav">
       <div className="my-0 mx-auto flex max-w-[500px] justify-between  py-10 text-[14px] tablets:text-base">
         <div>
           <ul>

@@ -15,12 +15,12 @@ export default function Banners({ categories }: BannerProps) {
             className="mb-10 h-80 w-full rounded-[10px] border-[1px] border-slate-300 bg-slate-100 p-4 dark:border-darkbg dark:bg-darknav"
           >
             <div className="mb-4">
-              <a href={`/posts/${item.attributes.Slug}`}>
+              <a href={`/category/${item.attributes.Slug}`}>
                 <img src={item.attributes.Image.data.attributes.formats.thumbnail.url} />
               </a>
             </div>
             <div>
-              <a href={`/posts/${item.attributes.Slug}`}>
+              <a href={`/category/${item.attributes.Slug}`}>
                 <h2 className="mb-4 text-center text-2xl">{item.attributes.name}</h2>
                 <p className="text-center">Veja todos os posts dessa categoria</p>
               </a>

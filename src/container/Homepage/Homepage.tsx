@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FullPost, PostData } from '../../domain/posts/post';
+import { FullPost } from '../../domain/posts/post';
 import Header from '../../components/Header/Header';
 import PostComponent from '../../components/PostComponent/PostComponent';
 import LatestPost from './components/LatestPost';
@@ -11,7 +11,6 @@ import Ad from '../../components/Ad/Ad';
 
 export type HomeProps = {
   posts: FullPost;
-  content: PostData;
   categories: FullCategory;
 };
 
@@ -47,7 +46,7 @@ export default function Homepage({ posts, categories }: HomeProps) {
                       date={post.attributes.publishedAt}
                       description={post.attributes.description}
                       slug={post.attributes.slug}
-                      category={post.attributes.category.data.attributes.name}
+                      category={post.attributes.category.data.attributes.Slug}
                     />
                   );
                 })}
