@@ -42,7 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx: any) => {
   const posts = await getPost(ctx.params.slug as string);
   const categories = await getAllCategories();
   return {
