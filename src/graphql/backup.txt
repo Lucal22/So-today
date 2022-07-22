@@ -1,0 +1,141 @@
+
+QUERIES
+
+  query GET_CATEGORIES {
+    categories {
+      ...categoryContent
+    }
+  }
+
+  query GET_AUTHORS {
+    authors {
+      ...authorContent
+    }
+  }
+
+FRAGMENTS
+
+fragment image on UploadFile {
+  alternativeText
+  formats
+}
+fragment authorContent on AuthorEntityResponseCollection {
+  data {
+    id
+    attributes {
+      name
+      description
+      slug
+      picture {
+        data {
+          attributes {
+            ...image
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment categoryContent on CategoryEntityResponseCollection {
+  data {
+    id
+    attributes {
+      ...categoryPostContent
+      image {
+        data {
+          attributes {
+            ...image
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment authorPostCotent on Author {
+  name
+  slug
+}
+
+fragment categoryPostContent on Category {
+  name
+  slug
+}
+
+fragment postContent on PostEntity {
+  id
+  attributes {
+    title
+    slug
+    description
+    content
+    publishedAt
+    updatedAt
+    author {
+      data {
+        attributes {
+          ...authorPostCotent
+        }
+      }
+    }
+    category {
+      data {
+        attributes {
+          ...categoryPostContent
+        }
+      }
+    }
+    cover {
+      data {
+        attributes {
+          ...image
+        }
+      }
+    }
+  }
+}
+
+query GET_POSTS {
+  posts {
+    data {
+      ...postContent
+    }
+  }
+}
+
+query GET_CATEGORIES {
+  categories {
+    ...categoryContent
+  }
+}
+
+query GET_AUTHORS {
+  authors {
+    ...authorContent
+  }
+}
+
+query GET_POSTS_BY_AUTHORS($slug: StringFilterInput) {
+  posts(filters: { author: { slug: $slug } }) {
+    data {
+      ...postContent
+    }
+  }
+}
+
+query GET_POSTS_BY_CATEGORY($slug: StringFilterInput) {
+  posts(filters: { category: { slug: $slug } }) {
+    data {
+      ...postContent
+    }
+  }
+}
+
+query GET_POST_BY_SLUG($slug: StringFilterInput) {
+  posts(filters: { slug: $slug }) {
+    data {
+      ...postContent
+    }
+  }
+}

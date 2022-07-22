@@ -1,0 +1,104 @@
+{
+  "data": {
+    "posts": {
+      "data": [
+        {
+          "id": "1",
+          "attributes": {
+            "title": "Um título qualquer",
+            "slug": "um-titulo-qualquer",
+            "description": "Isso é um teste para ver como ficará o conteúdo com a adição do ckeditor. xD",
+            "content": "<p>Isso é um teste para ver como ficará o conteúdo com a adição do ckeditor.</p><p><strong>Lorem Ipsum</strong><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);font-family:&quot;Open Sans&quot;, Arial, sans-serif;\"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the lea</span><span style=\"background-color:#FFFFFF;color:rgb(0,0,0);font-family:&quot;Open Sans&quot;, Arial, sans-serif;\">p into </span><span style=\"background-color:hsl(240,75%,60%);color:rgb(0,0,0);font-family:&quot;Open Sans&quot;, Arial, sans-serif;\">electronic typesetting, re</span><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);font-family:&quot;Open Sans&quot;, Arial, sans-serif;\">maining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></p><p style=\"margin-left:0px;text-align:justify;\">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from <span style=\"background-color:hsl(120,75%,60%);\">a Lorem Ipsum passage, and going</span> through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treat<span style=\"background-color:hsl(150,75%,60%);\">ise on the theory of ethics, v</span>ery popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</p><p style=\"margin-left:0px;text-align:justify;\">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cice<span style=\"background-color:hsl(0,75%,60%);\">ro are also reproduced in their exact origin</span>al form, accompanied by English versions from the 1914 translation by H. Rackham.</p>",
+            "publishedAt": "2022-07-21T17:50:53.546Z",
+            "updatedAt": "2022-07-22T00:38:08.704Z",
+            "author": {
+              "data": {
+                "attributes": {
+                  "name": "Luís Carlos",
+                  "slug": "luis-carlos"
+                }
+              }
+            },
+            "category": {
+              "data": {
+                "attributes": {
+                  "name": "Technology",
+                  "slug": "technology"
+                }
+              }
+            },
+            "cover": {
+              "data": {
+                "attributes": {
+                  "alternativeText": "unknown2.png",
+                  "formats": {
+                    "large": {
+                      "ext": ".png",
+                      "url": "https://res.cloudinary.com/dpzzbug9o/image/upload/v1658425697/large_unknown2_accf2460a0.png",
+                      "hash": "large_unknown2_accf2460a0",
+                      "mime": "image/png",
+                      "name": "large_unknown2.png",
+                      "path": null,
+                      "size": 881.26,
+                      "width": 1000,
+                      "height": 563,
+                      "provider_metadata": {
+                        "public_id": "large_unknown2_accf2460a0",
+                        "resource_type": "image"
+                      }
+                    },
+                    "small": {
+                      "ext": ".png",
+                      "url": "https://res.cloudinary.com/dpzzbug9o/image/upload/v1658425700/small_unknown2_accf2460a0.png",
+                      "hash": "small_unknown2_accf2460a0",
+                      "mime": "image/png",
+                      "name": "small_unknown2.png",
+                      "path": null,
+                      "size": 243.97,
+                      "width": 500,
+                      "height": 281,
+                      "provider_metadata": {
+                        "public_id": "small_unknown2_accf2460a0",
+                        "resource_type": "image"
+                      }
+                    },
+                    "medium": {
+                      "ext": ".png",
+                      "url": "https://res.cloudinary.com/dpzzbug9o/image/upload/v1658425698/medium_unknown2_accf2460a0.png",
+                      "hash": "medium_unknown2_accf2460a0",
+                      "mime": "image/png",
+                      "name": "medium_unknown2.png",
+                      "path": null,
+                      "size": 510.64,
+                      "width": 750,
+                      "height": 422,
+                      "provider_metadata": {
+                        "public_id": "medium_unknown2_accf2460a0",
+                        "resource_type": "image"
+                      }
+                    },
+                    "thumbnail": {
+                      "ext": ".png",
+                      "url": "https://res.cloudinary.com/dpzzbug9o/image/upload/v1658425695/thumbnail_unknown2_accf2460a0.png",
+                      "hash": "thumbnail_unknown2_accf2460a0",
+                      "mime": "image/png",
+                      "name": "thumbnail_unknown2.png",
+                      "path": null,
+                      "size": 71.88,
+                      "width": 245,
+                      "height": 138,
+                      "provider_metadata": {
+                        "public_id": "thumbnail_unknown2_accf2460a0",
+                        "resource_type": "image"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

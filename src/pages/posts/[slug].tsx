@@ -11,7 +11,9 @@ import { PostData } from '../../domain/posts/post';
 
 export type DynamicPostProps = {
   categories: FullCategory;
-  post: PostData;
+  post: {
+    attributes: PostData;
+  };
 };
 
 export default function DynamicPost({ post, categories }: DynamicPostProps) {
@@ -19,11 +21,11 @@ export default function DynamicPost({ post, categories }: DynamicPostProps) {
     <>
       <Head>
         <title>
-          {post.title} - {SITE_NAME}
+          {post.attributes.title} - {SITE_NAME}
         </title>
-        <meta name="description" content={post.description} />
+        <meta name="description" content={post.attributes.description} />
       </Head>
-      <PostContainer post={post} categories={categories} />;
+      <PostContainer post={post} categories={categories} />
     </>
   );
 }
@@ -46,6 +48,6 @@ export const getStaticProps: GetStaticProps = async (ctx: any) => {
   const posts = await getPost(ctx.params.slug as string);
   const categories = await getAllCategories();
   return {
-    props: { post: posts[0], categories },
+    props: { post: posts.data[0], categories },
   };
 };
