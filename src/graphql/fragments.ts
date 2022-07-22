@@ -7,7 +7,15 @@ export const GRAPHQL_FRAGMENTS = gql`
   }
   fragment authorPostCotent on Author {
     name
+    description
     slug
+    picture {
+      data {
+        attributes {
+          ...image
+        }
+      }
+    }
   }
 
   fragment categoryPostContent on Category {

@@ -3,8 +3,8 @@ import { navBar } from '../Header/Header';
 
 const socialMedias = [
   { id: 1, name: 'Portfolio', link: 'https://lucal-portfolio.vercel.app/' },
-  { id: 2, name: 'Github', link: 'https://github.com/Lucal22' },
-  { id: 3, name: 'Twitter', link: 'https://twitter.com/lucal_22' },
+  { id: 2, name: 'Linkedin', link: 'https://www.linkedin.com/in/lu%C3%ADs-carlos-723a28165/' },
+  { id: 3, name: 'Github', link: 'https://github.com/Lucal22' },
 ];
 
 export default function Footer() {

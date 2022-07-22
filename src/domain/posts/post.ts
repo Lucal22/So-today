@@ -6,6 +6,20 @@ export type PostAuthor = {
     attributes: {
       name: string;
       slug: string;
+      description: string;
+      picture: {
+        data: {
+          attributes: {
+            alternativeText: string;
+            formats: {
+              thumbnail: PostCoverFormat;
+              small: PostCoverFormat;
+              medium: PostCoverFormat;
+              large: PostCoverFormat;
+            };
+          };
+        };
+      };
       createdAt: string;
       updatedAt: string;
     };

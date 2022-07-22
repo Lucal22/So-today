@@ -1,9 +1,7 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import { getAllCategories } from '../../data/categories/get-all-categories';
 import Posts from '../../container/Posts/Posts';
 import { FullCategory } from '../../domain/categories/categories';
-import { getAllPosts } from '../../data/posts/get-all-posts';
 import { FullPost } from '../../domain/posts/post';
 
 export type PostsProps = {
