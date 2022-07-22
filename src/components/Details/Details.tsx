@@ -5,13 +5,14 @@ export type DetailsProps = {
   date: string;
   author: string;
   category: string;
+  authorSlug: string;
 };
 
-export default function Details({ date, author, category }: DetailsProps) {
+export default function Details({ authorSlug, date, author, category }: DetailsProps) {
   return (
     <span className=" text-[12px] text-slate-400 tablets:text-sm">
       <span className="hidden tablets:inline"> Publicado por</span>
-      <a className="hidden text-blue-500 tablets:inline" href={`/about`}>
+      <a className="hidden text-blue-500 tablets:inline" href={`/about/authors/${authorSlug}`}>
         {' '}
         {author}{' '}
       </a>

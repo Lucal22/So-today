@@ -1,7 +1,7 @@
 import { request } from 'graphql-request';
-import { GRAPHQLURL } from '../../config/app-config';
-import { GRAPHQL_QUERY } from '../../graphql/queries';
-import { FullPost } from './post';
+import { GRAPHQL_URL } from '../config/app-config';
+import { GRAPHQL_QUERY } from '../graphql/queries';
+import { FullPost } from '../domain/posts/post';
 
 export type EqualVariables = {
   eq: string;
@@ -31,7 +31,7 @@ export const loadPosts = async (variables: LoadPostVariables = {}): Promise<Requ
     start: 0,
     limit: 20,
   };
-  const data = await request(GRAPHQLURL, GRAPHQL_QUERY, {
+  const data = await request(GRAPHQL_URL, GRAPHQL_QUERY, {
     ...defaultVariables,
     ...variables,
   });

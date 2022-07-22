@@ -1,12 +1,12 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
-import { SITE_NAME } from '../../config/app-config';
-import Categories from '../../container/Categories/Categories';
-import { loadCategories, RequestCategoryResponse } from '../../data/load-categories';
-import { loadPosts, RequestResponse } from '../../data/load-posts';
-import { FullCategory } from '../../domain/categories/categories';
-import { PostData } from '../../domain/posts/post';
+import { SITE_NAME } from '../../../config/app-config';
+import Authors from '../../../container/Authors/Authors';
+import { loadCategories, RequestCategoryResponse } from '../../../data/load-categories';
+import { loadPosts, RequestResponse } from '../../../data/load-posts';
+import { FullCategory } from '../../../domain/categories/categories';
+import { PostData } from '../../../domain/posts/post';
 
 export type DynamicPostProps = {
   categories: FullCategory;
@@ -18,11 +18,11 @@ export default function DynamicPost({ posts, categories }: DynamicPostProps) {
     <>
       <Head>
         <title>
-          Categoria {posts[0].attributes.category.data.attributes.name} - {SITE_NAME}
+          Autor {posts[0].attributes.author.data.attributes.name} - {SITE_NAME}
         </title>
         <meta name="description" content={posts[0].attributes.description} />
       </Head>
-      <Categories posts={posts} categories={categories} />
+      <Authors posts={posts} categories={categories} />
     </>
   );
 }
@@ -36,7 +36,7 @@ export const getStaticPaths: unknown = async () => {
     paths = data.posts.data.map((post) => {
       return {
         params: {
-          slug: post.attributes.category.data.attributes.slug,
+          slug: post.attributes.author.data.attributes.slug,
         },
       };
     });
@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps<RequestResponse | RequestCategoryRes
   let data = null;
   try {
     data = await loadPosts({
-      categorySlug: {
+      authorSlug: {
         eq: ctx.params.slug as string,
       },
     });

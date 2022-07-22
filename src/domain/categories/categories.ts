@@ -15,35 +15,17 @@ export type FormatTypes = {
 };
 
 export type ImageSize = {
-  name: string;
   alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
   formats: {
     large: FormatTypes;
     medium: FormatTypes;
     small: FormatTypes;
     thumbnail: FormatTypes;
   };
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl: null;
-  provider: string;
-  provider_metadata: {
-    public_id: string;
-    resource_type: string;
-  };
-  createdAt: string;
-  updatedAt: string;
 };
 
 export type ImageFormat = {
   data: {
-    id: number;
     attributes: ImageSize;
   };
 };
@@ -54,9 +36,6 @@ export type FullCategory = {
       id: number;
       attributes: {
         name: string;
-        createdAt: string;
-        updatedAt: string;
-        publishedAt: string;
         slug: string;
         image: ImageFormat;
       };

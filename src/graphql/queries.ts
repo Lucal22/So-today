@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { GRAPHQL_FRAGMENTS } from './fragments';
+import { GRAPHQL_FRAGMENTS, GRAPHQL_CATEGORIES_FRAGMENTS } from './fragments';
 
 export const GRAPHQL_QUERY = gql`
   ${GRAPHQL_FRAGMENTS}
@@ -10,7 +10,7 @@ export const GRAPHQL_QUERY = gql`
     $authorSlug: StringFilterInput
     $sort: [String] = "publishedAt:desc"
     $start: Int = 0
-    $limit: Int = 10
+    $limit: Int = 20
   ) {
     posts(
       pagination: { start: $start, limit: $limit }
@@ -25,6 +25,15 @@ export const GRAPHQL_QUERY = gql`
       data {
         ...postContent
       }
+    }
+  }
+`;
+
+export const GRAPHQL_CATEGORIES = gql`
+  ${GRAPHQL_CATEGORIES_FRAGMENTS}
+  query GET_CATEGORIES {
+    categories {
+      ...categoryContent
     }
   }
 `;

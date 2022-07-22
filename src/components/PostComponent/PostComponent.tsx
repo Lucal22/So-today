@@ -9,6 +9,7 @@ export type PostComponentProps = {
   description: string;
   slug: string;
   category: string;
+  authorSlug: string;
 };
 
 export default function PostComponent({
@@ -19,6 +20,7 @@ export default function PostComponent({
   description,
   slug,
   category,
+  authorSlug,
 }: PostComponentProps) {
   return (
     <article className="grid h-full w-full grid-cols-mobile gap-2 border-t-[1px] border-slate-300 px-2 py-5 dark:border-black tablets:grid-cols-posts tablets:gap-8">
@@ -33,7 +35,7 @@ export default function PostComponent({
             {title}
           </h2>
         </a>
-        <Details author={author} date={date} category={category} />
+        <Details authorSlug={authorSlug} author={author} date={date} category={category} />
         <p
           className="mt-1 hidden text-justify text-slate-500 md:block"
           dangerouslySetInnerHTML={{

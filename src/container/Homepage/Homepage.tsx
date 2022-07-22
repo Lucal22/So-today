@@ -43,6 +43,7 @@ export default function Homepage({ posts, categories }: HomeProps) {
                       thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}
                       author={post.attributes.author.data.attributes.name}
+                      authorSlug={post.attributes.author.data.attributes.slug}
                       date={post.attributes.publishedAt}
                       description={post.attributes.description}
                       slug={post.attributes.slug}

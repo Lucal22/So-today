@@ -5,9 +5,9 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import MorePosts from '../../components/MorePosts/MorePosts';
 import PostComponent from '../../components/PostComponent/PostComponent';
-import { DynamicPostProps } from '../../pages/about/authors/[slug]';
+import { DynamicPostProps } from '../../pages/category/[slug]';
 
-export default function Authors({ posts, categories }: DynamicPostProps) {
+export default function Categories({ posts, categories }: DynamicPostProps) {
   const [number, setNumber] = useState<number>(7);
 
   const renderPosts = posts.slice(0, number);

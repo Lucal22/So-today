@@ -15,21 +15,22 @@ export default function PostContainer({ post, categories }: DynamicPostProps) {
           <Ad />
           <section className="block gap-10 md:grid md:grid-cols-sections">
             <section>
-              <article className="mb-10 block">
-                <h1 className="text-[32px]">{post.attributes.title}</h1>
+              <article id={post[0].id.toString()} className="mb-10 block">
+                <h1 className="text-[32px]">{post[0].attributes.title}</h1>
                 <PostDetails
-                  date={post.attributes.publishedAt}
-                  author={post.attributes.author.data.attributes.name}
-                  category={post.attributes.category.data.attributes.Slug}
+                  date={post[0].attributes.publishedAt}
+                  author={post[0].attributes.author.data.attributes.name}
+                  authorSlug={post[0].attributes.author.data.attributes.slug}
+                  category={post[0].attributes.category.data.attributes.slug}
                 />
                 <img
                   className="my-4"
-                  src={post.attributes.cover.data.attributes.formats.large.url}
-                  alt="Adicionar alt"
+                  src={post[0].attributes.cover.data.attributes.formats.large.url}
+                  alt={post[0].attributes.cover.data.attributes.alternativeText}
                 />
                 <div
                   className="mt-1 text-justify text-[18px] dark:text-slate-200"
-                  dangerouslySetInnerHTML={{ __html: post.attributes.content }}
+                  dangerouslySetInnerHTML={{ __html: post[0].attributes.content }}
                 />
               </article>
             </section>

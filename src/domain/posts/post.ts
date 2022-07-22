@@ -5,6 +5,7 @@ export type PostAuthor = {
     id: PostID;
     attributes: {
       name: string;
+      slug: string;
       createdAt: string;
       updatedAt: string;
     };
@@ -86,5 +87,11 @@ export type FullPost = {
       attributes: PostData;
     },
   ];
+  meta: object;
+};
+
+export type SinglePost = {
+  id: PostID;
+  attributes: PostData;
   meta: object;
 };

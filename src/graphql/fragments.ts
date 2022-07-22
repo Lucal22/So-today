@@ -32,22 +32,6 @@ export const GRAPHQL_FRAGMENTS = gql`
   #   }
   # }
 
-  # fragment categoryContent on CategoryEntityResponseCollection {
-  #   data {
-  #     id
-  #     attributes {
-  #       ...categoryPostContent
-  #       image {
-  #         data {
-  #           attributes {
-  #             ...image
-  #           }
-  #         }
-  #       }
-  #     }
-  #   }
-  # }
-
   fragment postContent on PostEntity {
     id
     attributes {
@@ -75,6 +59,31 @@ export const GRAPHQL_FRAGMENTS = gql`
         data {
           attributes {
             ...image
+          }
+        }
+      }
+    }
+  }
+`;
+export const GRAPHQL_CATEGORIES_FRAGMENTS = gql`
+  fragment image on UploadFile {
+    alternativeText
+    formats
+  }
+  fragment categoryPostContent on Category {
+    name
+    slug
+  }
+  fragment categoryContent on CategoryEntityResponseCollection {
+    data {
+      id
+      attributes {
+        ...categoryPostContent
+        image {
+          data {
+            attributes {
+              ...image
+            }
           }
         }
       }
