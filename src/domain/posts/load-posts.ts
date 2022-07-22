@@ -1,6 +1,7 @@
 import { request } from 'graphql-request';
 import { GRAPHQLURL } from '../../config/app-config';
 import { GRAPHQL_QUERY } from '../../graphql/queries';
+import { FullPost } from './post';
 
 export type EqualVariables = {
   eq: string;
@@ -20,7 +21,11 @@ export type LoadPostVariables = {
   limit?: number;
 };
 
-export const loadPosts = async (variables: LoadPostVariables = {}) => {
+export type RequestResponse = {
+  posts: FullPost;
+};
+
+export const loadPosts = async (variables: LoadPostVariables = {}): Promise<RequestResponse> => {
   const defaultVariables: LoadPostVariables = {
     sort: 'publishedAt:desc',
     start: 0,

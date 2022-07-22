@@ -46,7 +46,7 @@ export default function Homepage({ posts, categories }: HomeProps) {
                       date={post.attributes.publishedAt}
                       description={post.attributes.description}
                       slug={post.attributes.slug}
-                      category={post.attributes.category.data.attributes.Slug}
+                      category={post.attributes.category.data.attributes.slug}
                     />
                   );
                 })}

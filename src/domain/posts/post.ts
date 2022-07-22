@@ -18,7 +18,7 @@ export type PostCategory = {
       name: string;
       createdAt: string;
       updatedAt: string;
-      Slug: string;
+      slug: string;
     };
   };
 };

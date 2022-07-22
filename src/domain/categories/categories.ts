@@ -57,8 +57,8 @@ export type FullCategory = {
         createdAt: string;
         updatedAt: string;
         publishedAt: string;
-        Slug: string;
-        Image: ImageFormat;
+        slug: string;
+        image: ImageFormat;
       };
     },
   ];

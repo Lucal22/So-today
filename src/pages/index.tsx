@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Homepage from '../container/Homepage/Homepage';
 import { GetStaticProps } from 'next';
-import { getAllPosts } from '../data/posts/get-all-posts';
 import { FullPost } from '../domain/posts/post';
 import { getAllCategories } from '../data/categories/get-all-categories';
 import { FullCategory } from '../domain/categories/categories';
 import { SITE_NAME } from '../config/app-config';
-import { loadPosts } from '../domain/posts/load-posts';
+import { loadPosts, RequestResponse } from '../domain/posts/load-posts';
 
 export type HomeProps = {
   posts: FullPost;
@@ -15,29 +14,31 @@ export type HomeProps = {
 };
 
 export default function Home({ posts, categories }: HomeProps) {
-  useEffect(() => {
-    loadPosts({
-      authorSlug: {
-        eq: 'luis-carlos',
-      },
-    }).then((r) => console.log(r));
-  });
   return (
-    // <>
-    //   <Head>
-    //     <title>{SITE_NAME}</title>
-    //     <meta name="description" content="Um blog pessoal em 2022!" />
-    //   </Head>
-    //   <Homepage posts={posts} categories={categories} />
-    // </>
-    <h1>oi</h1>
+    <>
+      <Head>
+        <title>{SITE_NAME}</title>
+        <meta name="description" content="Um blog pessoal em 2022!" />
+      </Head>
+      <Homepage posts={posts} categories={categories} />
+    </>
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts(`pagination[start]=0&pagination[limit]=20`);
+export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
+  let data = null;
+  try {
+    data = await loadPosts();
+  } catch (e) {
+    data = null;
+  }
   const categories = await getAllCategories();
+  if (!data || !data.posts || !data.posts.data.length) {
+    return {
+      notFound: true,
+    };
+  }
   return {
-    props: { posts, categories },
+    props: { posts: data.posts, categories },
   };
 };
