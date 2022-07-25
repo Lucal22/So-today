@@ -4,11 +4,12 @@ import Banners from '../../components/Banners/Banners';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import MorePosts from '../../components/MorePosts/MorePosts';
-import PostComponent from '../../components/PostComponent/PostComponent';
+import PostCard from '../../components/Cards/PostCard';
 import { DynamicPostProps } from '../../pages/about/authors/[slug]';
+import AuthorCard from '../../components/Cards/AuthorCard';
 
 export default function Authors({ posts, categories }: DynamicPostProps) {
-  const [number, setNumber] = useState<number>(7);
+  const [number, setNumber] = useState<number>(6);
 
   const renderPosts = posts.slice(0, number);
 
@@ -21,9 +22,22 @@ export default function Authors({ posts, categories }: DynamicPostProps) {
           <section className="block gap-10 md:grid md:grid-cols-sections">
             <section>
               <div className="mb-10 block">
+                <AuthorCard
+                  authorSlug={posts[0].attributes.author.data.attributes.slug}
+                  authorImage={
+                    posts[0].attributes.author.data.attributes.picture.data.attributes.formats
+                      .medium.url
+                  }
+                  authorAlt={
+                    posts[0].attributes.author.data.attributes.picture.data.attributes
+                      .alternativeText
+                  }
+                  authorName={posts[0].attributes.author.data.attributes.name}
+                  authorDescription={posts[0].attributes.author.data.attributes.description}
+                />
                 {renderPosts.map((post) => {
                   return (
-                    <PostComponent
+                    <PostCard
                       key={post.attributes.slug}
                       thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}

@@ -11,11 +11,6 @@ export const navBar = [
   },
   {
     id: 2,
-    name: 'Contato',
-    route: '/contact',
-  },
-  {
-    id: 3,
     name: 'Sobre',
     route: '/about',
   },

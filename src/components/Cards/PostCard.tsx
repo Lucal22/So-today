@@ -1,7 +1,7 @@
 import React from 'react';
 import Details from '../Details/Details';
 
-export type PostComponentProps = {
+export type PostCardProps = {
   thumbmail: string;
   title: string;
   author: string;
@@ -12,7 +12,7 @@ export type PostComponentProps = {
   authorSlug: string;
 };
 
-export default function PostComponent({
+export default function PostCard({
   thumbmail,
   title,
   author,
@@ -21,7 +21,7 @@ export default function PostComponent({
   slug,
   category,
   authorSlug,
-}: PostComponentProps) {
+}: PostCardProps) {
   return (
     <article className="grid h-full w-full grid-cols-mobile gap-2 border-t-[1px] border-slate-300 px-2 py-5 dark:border-black tablets:grid-cols-posts tablets:gap-8">
       <div>

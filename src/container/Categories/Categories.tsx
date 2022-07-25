@@ -4,7 +4,7 @@ import Banners from '../../components/Banners/Banners';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import MorePosts from '../../components/MorePosts/MorePosts';
-import PostComponent from '../../components/PostComponent/PostComponent';
+import PostCard from '../../components/Cards/PostCard';
 import { DynamicPostProps } from '../../pages/category/[slug]';
 
 export default function Categories({ posts, categories }: DynamicPostProps) {
@@ -23,7 +23,7 @@ export default function Categories({ posts, categories }: DynamicPostProps) {
               <div className="mb-10 block">
                 {renderPosts.map((post) => {
                   return (
-                    <PostComponent
+                    <PostCard
                       key={post.attributes.slug}
                       thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FullPost } from '../../domain/posts/post';
 import Header from '../../components/Header/Header';
-import PostComponent from '../../components/PostComponent/PostComponent';
+import PostCard from '../../components/Cards/PostCard';
 import LatestPost from './components/LatestPost';
 import Banners from '../../components/Banners/Banners';
 import MorePosts from '../../components/MorePosts/MorePosts';
@@ -38,7 +38,7 @@ export default function Homepage({ posts, categories }: HomeProps) {
               <div className="mb-10 block">
                 {renderPosts.map((post) => {
                   return (
-                    <PostComponent
+                    <PostCard
                       key={post.id}
                       thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}

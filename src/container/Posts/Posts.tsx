@@ -4,19 +4,13 @@ import Banners from '../../components/Banners/Banners';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import MorePosts from '../../components/MorePosts/MorePosts';
-import PostComponent from '../../components/PostComponent/PostComponent';
-import { FullCategory } from '../../domain/categories/categories';
-import { FullPost } from '../../domain/posts/post';
-
-export type PostsProps = {
-  posts: FullPost;
-  categories: FullCategory;
-};
+import PostCard from '../../components/Cards/PostCard';
+import { PostsProps } from '../../pages/posts';
 
 export default function Posts({ posts, categories }: PostsProps) {
   const [number, setNumber] = useState<number>(7);
 
-  const renderPosts = posts.data.slice(0, number);
+  const renderPosts = posts.slice(0, number);
 
   return (
     <>
@@ -29,11 +23,12 @@ export default function Posts({ posts, categories }: PostsProps) {
               <div className="mb-10 block">
                 {renderPosts.map((post) => {
                   return (
-                    <PostComponent
+                    <PostCard
                       key={post.id}
                       thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}
                       author={post.attributes.author.data.attributes.name}
+                      authorSlug={post.attributes.author.data.attributes.slug}
                       date={post.attributes.publishedAt}
                       description={post.attributes.description}
                       slug={post.attributes.slug}
