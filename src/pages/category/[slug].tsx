@@ -16,13 +16,14 @@ export type DynamicPostProps = {
 export default function DynamicPost({ posts, categories }: DynamicPostProps) {
   return (
     <>
-      <Head>
+      <p>teste</p>
+      {/* <Head>
         <title>
           Categoria {posts[0].attributes.category.data.attributes.name} - {SITE_NAME}
         </title>
         <meta name="description" content={posts[0].attributes.description} />
       </Head>
-      <Categories posts={posts} categories={categories} />
+      <Categories posts={posts} categories={categories} /> */}
     </>
   );
 }
