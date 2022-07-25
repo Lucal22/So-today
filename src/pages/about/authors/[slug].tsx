@@ -14,7 +14,6 @@ export type DynamicPostProps = {
 };
 
 export default function DynamicPost({ posts, categories }: DynamicPostProps) {
-  console.log(posts);
   return (
     <>
       <Head>
