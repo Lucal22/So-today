@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
-// import Head from 'next/head';
+import Head from 'next/head';
 import React from 'react';
-// import { SITE_NAME } from '../../../config/app-config';
+import { SITE_NAME } from '../../../config/app-config';
 import Authors from '../../../container/Authors/Authors';
 import { loadCategories, RequestCategoryResponse } from '../../../data/load-categories';
 import { loadPosts, RequestResponse } from '../../../data/load-posts';
@@ -10,18 +10,19 @@ import { PostData } from '../../../domain/posts/post';
 
 export type DynamicPostProps = {
   categories: FullCategory;
-  posts: [{ attributes: PostData }];
+  posts: [{ id: number; attributes: PostData }];
 };
 
 export default function DynamicPost({ posts, categories }: DynamicPostProps) {
+  console.log(posts);
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>
           Autor {posts[0].attributes.author.data.attributes.name} - {SITE_NAME}
         </title>
         <meta name="description" content={posts[0].attributes.description} />
-      </Head> */}
+      </Head>
       <Authors posts={posts} categories={categories} />
     </>
   );

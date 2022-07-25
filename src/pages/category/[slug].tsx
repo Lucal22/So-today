@@ -10,20 +10,20 @@ import { PostData } from '../../domain/posts/post';
 
 export type DynamicPostProps = {
   categories: FullCategory;
-  posts: [{ attributes: PostData }];
+  posts: [{ id: number; attributes: PostData }];
 };
 
 export default function DynamicPost({ posts, categories }: DynamicPostProps) {
   return (
     <>
       <p>teste</p>
-      {/* <Head>
+      <Head>
         <title>
           Categoria {posts[0].attributes.category.data.attributes.name} - {SITE_NAME}
         </title>
         <meta name="description" content={posts[0].attributes.description} />
       </Head>
-      <Categories posts={posts} categories={categories} /> */}
+      <Categories posts={posts} categories={categories} />
     </>
   );
 }
