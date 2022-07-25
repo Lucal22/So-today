@@ -21,7 +21,7 @@ export default function Authors({ posts, categories }: DynamicPostProps) {
           <section className="block gap-10 md:grid md:grid-cols-sections">
             <section>
               <div className="mb-10 block">
-                <AuthorCard
+                {/* <AuthorCard
                   authorSlug={posts[0].attributes.author.data.attributes.slug}
                   authorImage={
                     posts[0].attributes.author.data.attributes.picture.data.attributes.formats
@@ -33,7 +33,7 @@ export default function Authors({ posts, categories }: DynamicPostProps) {
                   }
                   authorName={posts[0].attributes.author.data.attributes.name}
                   authorDescription={posts[0].attributes.author.data.attributes.description}
-                />
+                /> */}
                 {posts.map((post) => {
                   return (
                     <PostCard
