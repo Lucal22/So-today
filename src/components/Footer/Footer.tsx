@@ -27,7 +27,7 @@ export default function Footer() {
         <div>
           <ul>
             {navBar.map((item) => (
-              <a key={item.id} href={item.route} target="_blank" rel="noopener noreferrer">
+              <a key={item.id} href={item.route}>
                 <li className="mb-4 text-center hover:text-blue-500 dark:hover:text-blue-500">
                   {item.name}
                 </li>

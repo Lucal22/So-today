@@ -2,7 +2,13 @@ import React from 'react';
 import Date from '../Date/Date';
 import { DetailsProps } from './Details';
 
-export default function PostDetails({ authorSlug, date, author, category }: DetailsProps) {
+export default function PostDetails({
+  authorSlug,
+  date,
+  author,
+  category,
+  categorySlug,
+}: DetailsProps) {
   return (
     <span className=" text-[12px] text-slate-400">
       <span> Publicado por</span>
@@ -13,7 +19,7 @@ export default function PostDetails({ authorSlug, date, author, category }: Deta
       <span>
         em <Date date={date} /> |{' '}
       </span>
-      <a className=" text-blue-500" href={`/category/${category}`}>
+      <a className=" text-blue-500" href={`/category/${categorySlug}`}>
         {category}
       </a>
     </span>

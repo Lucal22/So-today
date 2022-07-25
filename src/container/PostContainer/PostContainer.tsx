@@ -21,7 +21,8 @@ export default function PostContainer({ post, categories }: DynamicPostProps) {
                   date={post[0].attributes.publishedAt}
                   author={post[0].attributes.author.data.attributes.name}
                   authorSlug={post[0].attributes.author.data.attributes.slug}
-                  category={post[0].attributes.category.data.attributes.slug}
+                  category={post[0].attributes.category.data.attributes.name}
+                  categorySlug={post[0].attributes.category.data.attributes.slug}
                 />
                 <img
                   className="my-4"

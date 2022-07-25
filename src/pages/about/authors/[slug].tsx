@@ -4,20 +4,21 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { SITE_NAME } from '../../../config/app-config';
 import Authors from '../../../container/Authors/Authors';
+import Loading from '../../../container/Loading/Loading';
 import { loadCategories, RequestCategoryResponse } from '../../../data/load-categories';
 import { loadPosts, RequestResponse } from '../../../data/load-posts';
 import { FullCategory } from '../../../domain/categories/categories';
-import { PostData } from '../../../domain/posts/post';
+import { SinglePost } from '../../../domain/posts/post';
 
 export type DynamicPostProps = {
   categories: FullCategory;
-  posts: [{ id: number; attributes: PostData }];
+  posts: [SinglePost];
 };
 
 export default function DynamicPost({ posts, categories }: DynamicPostProps) {
   const router = useRouter();
   if (router.isFallback) {
-    return <h1>Loading</h1>;
+    return <Loading />;
   }
   return (
     <>
@@ -33,26 +34,9 @@ export default function DynamicPost({ posts, categories }: DynamicPostProps) {
 }
 
 //fix type
-export const getStaticPaths: unknown = async () => {
-  let data: RequestResponse | null = null;
-  let paths: { params: { slug: string } }[] = [];
-  try {
-    data = await loadPosts();
-    paths = data.posts.data.map((post) => {
-      return {
-        params: {
-          slug: post.attributes.author.data.attributes.slug,
-        },
-      };
-    });
-  } catch (e) {
-    data = null;
-  }
-  if (!data || !data.posts || !data.posts.data.length) {
-    return (paths = []);
-  }
+export const getStaticPaths = async () => {
   return {
-    paths,
+    paths: [],
     fallback: true,
   };
 };

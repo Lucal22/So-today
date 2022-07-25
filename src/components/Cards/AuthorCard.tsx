@@ -36,13 +36,13 @@ export default function AuthorCard({
           </h2>
         </a>
         <p
-          className="mt-1 hidden text-justify text-slate-500 md:block"
+          className="mt-1 mb-10 hidden text-justify text-slate-500 md:block"
           dangerouslySetInnerHTML={{
             __html: authorDescription,
           }}
         />
         <div className="absolute bottom-[15px]">
-          <ul className=" flex justify-between gap-20 text-blue-500">
+          <ul className=" block justify-between text-[14px] text-blue-500 md:flex md:gap-12 mobile:text-[18px]">
             {contato.map((item) => {
               return (
                 <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">

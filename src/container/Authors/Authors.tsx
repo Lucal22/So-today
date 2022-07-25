@@ -46,6 +46,7 @@ export default function Authors({ posts, categories }: DynamicPostProps) {
                       description={post.attributes.description}
                       slug={post.attributes.slug}
                       category={post.attributes.category.data.attributes.name}
+                      categorySlug={post.attributes.category.data.attributes.slug}
                     />
                   );
                 })}
