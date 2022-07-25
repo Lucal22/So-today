@@ -10,8 +10,7 @@ import AuthorCard from '../../components/Cards/AuthorCard';
 
 export default function Authors({ posts, categories }: DynamicPostProps) {
   const [number, setNumber] = useState<number>(6);
-
-  const renderPosts = posts.slice(0, number);
+  //const renderPosts = posts.slice(0, number);
 
   return (
     <>
@@ -35,7 +34,7 @@ export default function Authors({ posts, categories }: DynamicPostProps) {
                   authorName={posts[0].attributes.author.data.attributes.name}
                   authorDescription={posts[0].attributes.author.data.attributes.description}
                 />
-                {renderPosts.map((post) => {
+                {posts.map((post) => {
                   return (
                     <PostCard
                       key={post.attributes.slug}
