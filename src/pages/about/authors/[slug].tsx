@@ -28,7 +28,7 @@ export default function DynamicPost({ posts, categories }: DynamicPostProps) {
 }
 
 //fix type
-export const getStaticPaths: unknown = async () => {
+export const getStaticPaths: any = async () => {
   let data: RequestResponse | null = null;
   let paths: { params: { slug: string } }[] = [];
   try {
