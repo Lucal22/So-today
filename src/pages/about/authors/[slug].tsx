@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
+// import Head from 'next/head';
 import React from 'react';
-import { SITE_NAME } from '../../../config/app-config';
+// import { SITE_NAME } from '../../../config/app-config';
 import Authors from '../../../container/Authors/Authors';
 import { loadCategories, RequestCategoryResponse } from '../../../data/load-categories';
 import { loadPosts, RequestResponse } from '../../../data/load-posts';
@@ -16,19 +16,19 @@ export type DynamicPostProps = {
 export default function DynamicPost({ posts, categories }: DynamicPostProps) {
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>
           Autor {posts[0].attributes.author.data.attributes.name} - {SITE_NAME}
         </title>
         <meta name="description" content={posts[0].attributes.description} />
-      </Head>
+      </Head> */}
       <Authors posts={posts} categories={categories} />
     </>
   );
 }
 
 //fix type
-export const getStaticPaths: any = async () => {
+export const getStaticPaths: unknown = async () => {
   let data: RequestResponse | null = null;
   let paths: { params: { slug: string } }[] = [];
   try {
