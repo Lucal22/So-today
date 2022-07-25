@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { SITE_NAME } from '../../config/app-config';
 import Categories from '../../container/Categories/Categories';
@@ -14,6 +15,11 @@ export type DynamicPostProps = {
 };
 
 export default function DynamicPost({ posts, categories }: DynamicPostProps) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <h1>Loading</h1>;
+  }
+
   return (
     <>
       <p>teste</p>
