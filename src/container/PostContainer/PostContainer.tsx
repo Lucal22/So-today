@@ -1,12 +1,14 @@
 import React from 'react';
 import Ad from '../../components/Ad/Ad';
 import Banners from '../../components/Banners/Banners';
+import Comments from '../../components/Comments/Comments';
 import PostDetails from '../../components/Details/PostDetails';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import { DynamicPostProps } from '../../pages/posts/[slug]';
 
 export default function PostContainer({ post, categories }: DynamicPostProps) {
+  const showPost = post[0].attributes;
   return (
     <>
       <Header />
@@ -18,20 +20,26 @@ export default function PostContainer({ post, categories }: DynamicPostProps) {
               <article id={post[0].id.toString()} className="mb-10 block">
                 <h1 className="text-[32px]">{post[0].attributes.title}</h1>
                 <PostDetails
-                  date={post[0].attributes.publishedAt}
-                  author={post[0].attributes.author.data.attributes.name}
-                  authorSlug={post[0].attributes.author.data.attributes.slug}
-                  category={post[0].attributes.category.data.attributes.name}
-                  categorySlug={post[0].attributes.category.data.attributes.slug}
+                  date={showPost.publishedAt}
+                  author={showPost.author.data.attributes.name}
+                  authorSlug={showPost.author.data.attributes.slug}
+                  category={showPost.category.data.attributes.name}
+                  categorySlug={showPost.category.data.attributes.slug}
                 />
                 <img
                   className="my-4"
-                  src={post[0].attributes.cover.data.attributes.formats.large.url}
-                  alt={post[0].attributes.cover.data.attributes.alternativeText}
+                  src={showPost.cover.data.attributes.formats.large.url}
+                  alt={showPost.cover.data.attributes.alternativeText}
                 />
                 <div
-                  className="mt-1 text-justify text-[18px] dark:text-slate-200"
-                  dangerouslySetInnerHTML={{ __html: post[0].attributes.content }}
+                  className="mt-1 mb-10 text-justify text-[18px] dark:text-slate-200"
+                  dangerouslySetInnerHTML={{ __html: showPost.content }}
+                />
+                <Comments
+                  id={post[0].id.toString()}
+                  slug={showPost.slug}
+                  title={showPost.title}
+                  allowComments={true}
                 />
               </article>
             </section>
