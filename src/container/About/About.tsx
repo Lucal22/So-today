@@ -17,7 +17,7 @@ export default function About({ posts, categories }: AboutProps) {
             <section>
               <div>
                 <h1 className="mb-4 text-[32px]">Sobre</h1>
-                <p className="mb-4">
+                <p className="mb-4 text-slate-500">
                   Esse blog foi feito com o objetivo de aumentar minhas habilidades em programação e
                   também servir como um ambiente onde posso dividir minhas experiências e ideias
                   sobre vários assuntos, principalmente relacionados a tecnologia.

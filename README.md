@@ -1,3 +1,3 @@
-## So today
+## Lucal Thoughts
 
 A personal blog built on Next.js.

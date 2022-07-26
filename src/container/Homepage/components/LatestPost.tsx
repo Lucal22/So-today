@@ -5,9 +5,15 @@ export type LatestPostProps = {
   lastPostTitle: string;
   lastSlug: string;
   lastCategory: string;
+  lastPostAlt: string;
 };
 
-export default function LatestPost({ lastPostUrl, lastPostTitle, lastSlug }: LatestPostProps) {
+export default function LatestPost({
+  lastPostUrl,
+  lastPostTitle,
+  lastSlug,
+  lastPostAlt,
+}: LatestPostProps) {
   return (
     <section className="hidden tablets:block">
       <div>
@@ -15,6 +21,7 @@ export default function LatestPost({ lastPostUrl, lastPostTitle, lastSlug }: Lat
           <img
             className="max-w-full cursor-pointer rounded-tr-[10px] border-[1px] border-slate-300 dark:border-black dark:border-b-darkbg"
             src={lastPostUrl}
+            alt={lastPostAlt}
           />
         </a>
         <div className="flex h-full max-w-[240px] justify-center  rounded-b-[10px] border-x-[1px] border-b-[1px] border-slate-300  bg-slate-100 p-2 align-middle dark:border-black dark:bg-darknav  mobile:max-w-full">

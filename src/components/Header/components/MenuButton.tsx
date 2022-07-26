@@ -10,6 +10,7 @@ export default function MenuButton() {
     <>
       <div>
         <List
+          name="Abre menu mobile"
           onClick={() => {
             setMenu(true);
           }}
@@ -22,6 +23,7 @@ export default function MenuButton() {
           <div className="pt-4 pl-2">
             <div>
               <X
+                name="Fecha menu mobile"
                 onClick={() => {
                   setMenu(false);
                 }}
@@ -40,10 +42,15 @@ export default function MenuButton() {
             </ul>
             <div>
               <button
+                aria-label="botão do tema"
                 className="mb-6 hover:text-blue-500 dark:hover:text-blue-500"
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               >
-                {theme === 'light' ? <SunDim size={25} /> : <Moon size={25} />}
+                {theme === 'light' ? (
+                  <SunDim aria-label="Mudar para tema escuro" size={25} />
+                ) : (
+                  <Moon aria-label="Mudar para tema claro" size={25} />
+                )}
               </button>
               <div>
                 <a
@@ -52,7 +59,7 @@ export default function MenuButton() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GithubLogo size={25} />
+                  <GithubLogo aria-label="Botão para página do github" size={25} />
                 </a>
               </div>
             </div>

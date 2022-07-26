@@ -16,22 +16,26 @@ export default function Footer() {
         <div>
           <ul>
             {socialMedias.map((item) => (
-              <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">
-                <li className="mb-4 text-center hover:text-blue-500 dark:hover:text-blue-500 ">
+              <li
+                key={item.id}
+                className="mb-4 text-center hover:text-blue-500 dark:hover:text-blue-500 "
+              >
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
                   {item.name}
-                </li>
-              </a>
+                </a>
+              </li>
             ))}
           </ul>
         </div>
         <div>
           <ul>
             {navBar.map((item) => (
-              <a key={item.id} href={item.route}>
-                <li className="mb-4 text-center hover:text-blue-500 dark:hover:text-blue-500">
-                  {item.name}
-                </li>
-              </a>
+              <li
+                key={item.id}
+                className="mb-4 text-center hover:text-blue-500 dark:hover:text-blue-500"
+              >
+                <a href={item.route}>{item.name}</a>
+              </li>
             ))}
           </ul>
         </div>

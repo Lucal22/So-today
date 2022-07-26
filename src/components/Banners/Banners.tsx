@@ -16,7 +16,10 @@ export default function Banners({ categories }: BannerProps) {
           >
             <div className="mb-4">
               <a href={`/category/${item.attributes.slug}`}>
-                <img src={item.attributes.image.data.attributes.formats.thumbnail.url} />
+                <img
+                  src={item.attributes.image.data.attributes.formats.thumbnail.url}
+                  alt={item.attributes.image.data.attributes.alternativeText}
+                />
               </a>
             </div>
             <div>
