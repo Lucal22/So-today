@@ -26,6 +26,7 @@ export default function Posts({ posts, categories }: PostsProps) {
                     <PostCard
                       key={post.id}
                       thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
+                      alt={post.attributes.cover.data.attributes.alternativeText}
                       title={post.attributes.title}
                       author={post.attributes.author.data.attributes.name}
                       authorSlug={post.attributes.author.data.attributes.slug}
