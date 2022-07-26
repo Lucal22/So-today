@@ -1,7 +1,6 @@
 import React from 'react';
 import Ad from '../../components/Ad/Ad';
 import Banners from '../../components/Banners/Banners';
-import Comments from '../../components/Comments/Comments';
 import PostDetails from '../../components/Details/PostDetails';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -34,12 +33,6 @@ export default function PostContainer({ post, categories }: DynamicPostProps) {
                 <div
                   className="mt-1 mb-10 text-justify text-[18px] dark:text-slate-200"
                   dangerouslySetInnerHTML={{ __html: showPost.content }}
-                />
-                <Comments
-                  id={post[0].id.toString()}
-                  slug={showPost.slug}
-                  title={showPost.title}
-                  allowComments={true}
                 />
               </article>
             </section>
