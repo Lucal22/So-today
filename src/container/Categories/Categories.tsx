@@ -26,6 +26,7 @@ export default function Categories({ posts, categories }: DynamicPostProps) {
                     <PostCard
                       key={post.attributes.slug}
                       thumbmail={post.attributes.cover.data.attributes.formats.thumbnail.url}
+                      alt={post.attributes.cover.data.attributes.formats.thumbnail.url}
                       title={post.attributes.title}
                       author={post.attributes.author.data.attributes.name}
                       authorSlug={post.attributes.author.data.attributes.slug}
