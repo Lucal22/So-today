@@ -47,7 +47,7 @@ export default function Header() {
             {/* theme button and github link */}
             <div className="flex flex-row gap-2">
               <button
-                aria-label="botão do tema"
+                aria-label="Botão do tema"
                 className="hover:text-blue-500 dark:hover:text-blue-500"
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               >
@@ -64,7 +64,11 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GithubLogo aria-label="Botão para página do github" size={25} />
+                  <GithubLogo
+                    className="block"
+                    aria-label="Botão para página do github"
+                    size={25}
+                  />
                 </a>
               </div>
               {/* Mini menu */}

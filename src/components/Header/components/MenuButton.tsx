@@ -10,7 +10,7 @@ export default function MenuButton() {
     <>
       <div>
         <List
-          name="Abre menu mobile"
+          arial-label="Abre menu mobile"
           onClick={() => {
             setMenu(true);
           }}
